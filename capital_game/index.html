@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Assel Katayeva 20190778</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+    <link href="./capital_game.css" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+
+  </head>
+  <body>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-database.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
+
+  <!--Your HTML here-->
+    <div class="Table">
+    <h1>World Capital Quiz Game</h1>
+    <h2>Do you know the capital of this country?</h2>
+    <form autocomplete="off">
+      <div id='map' style='width: 600px; height: 450px;'><script>
+
+      </script></div>
+      <select id="modes">
+        <option value="All" selected>All</option>
+        <option value="Right">Right</option>
+        <option value="Wrong">Wrong</option>
+      </select>
+      <button id="pr3__reset" type = "button" onclick="preset()">Reset</button>
+      <button id="pr3__clear" type = "button" onclick="empty()">Clear</button>
+      <button id="pr3__undo"  type = "button" onclick="undo()">Undo</button>
+      <table id = "mytable">
+        <tr style="border-bottom: 2px solid black;">
+          <th>COUNTRY</th>
+          <th>CAPITAL CITY</th>
+          <th>ANSWER</th>
+        </tr>
+        <tr>
+          <td>
+            <div id = 'pr2__country' ></div>
+          </td>
+          <td class="container">
+            <input type="text" id="pr2__capital" name="capital" value="" autofocus list = "options">
+            <datalist id = "options"></datalist>
+            <input type="hidden" id="correct" value1="" value2="" question="" coord_x="" coord_y="">
+            <label class="suggestions" id="suggestions" style="z-index: 100; font-weight: normal"></label>
+          </td>
+          <td><button type="button" id = "pr2__button" onclick="add()">Check answer</button></td>
+        </tr>
+
+      </table>
+    </form>
+  </div>
+    <script src="jquery/js/jquery-1.9.0.min.js"></script>
+    <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="./capital_game.js"></script>
+  </body>
+</html>
